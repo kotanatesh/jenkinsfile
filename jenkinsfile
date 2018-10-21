@@ -1,4 +1,4 @@
-node('slave') 
+node('master') 
 {
  stage('checkout')
  {
@@ -12,7 +12,7 @@ stage('deploy')
 {
     sh ' scp 
 /home/ubuntu/workspace/workspace/pipeline/webapp/target/webapp.war 
-ubuntu@13.233.51.99:/var/lib/tomcat7/webapps/qaenv.war'
+ubuntu@52.66.245.54:/var/lib/tomcat7/webapps/qaenv.war'
 
 }
 stage('testing')
@@ -25,7 +25,7 @@ stage('prod_del')
 {
       sh ' scp 
 /home/ubuntu/workspace/workspace/pipeline/webapp/target/webapp.war 
-ubuntu@13.232.122.134:/var/lib/tomcat7/webapps/prodenv.war'
+ubuntu@13.232.102.189:/var/lib/tomcat7/webapps/prodenv.war'
 
 }
 
